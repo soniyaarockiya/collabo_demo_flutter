@@ -13,14 +13,16 @@ class _DrawerMenuState extends State<DrawerMenu> {
       child: Drawer(
         child: Column(
           children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text('Some name'),
-              accountEmail: null,
-              decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(32.0),
-                      bottomLeft: Radius.circular(32.0))),
+            Center(
+              child: UserAccountsDrawerHeader(
+                accountName: Center(child: Text('Some name')),
+                accountEmail: null,
+                decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(32.0),
+                        bottomLeft: Radius.circular(32.0))),
+              ),
             ),
             ListTile(
               dense: false,

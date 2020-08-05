@@ -3,12 +3,21 @@ import 'package:collabo_demo_flutter/constants/ui_constants.dart';
 
 class RoundedButton extends StatelessWidget {
   RoundedButton(
-      {this.title, this.color, @required this.onPressed, this.buttonIcon});
+      {this.middleText,
+      this.color,
+      @required this.onPressed,
+      this.buttonIcon1,
+      this.buttonIcon2,
+      this.onIconPress1,
+      this.onIconPress2});
 
-  final String title;
+  final String middleText;
   final Function onPressed;
   final Color color;
-  final IconData buttonIcon;
+  final IconData buttonIcon1;
+  final IconData buttonIcon2;
+  final Function onIconPress1;
+  final Function onIconPress2;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +32,27 @@ class RoundedButton extends StatelessWidget {
           minWidth: MediaQuery.of(context).copyWith().size.width / 30,
           height: MediaQuery.of(context).copyWith().size.height / 10,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Icon(
-                buttonIcon,
+              Expanded(
+                child: IconButton(
+                  icon: Icon(buttonIcon1),
+                  onPressed: onIconPress1,
+                ),
               ),
               kSizedBoxWidth,
-              Text(
-                title,
-                style: kRoundedButtonTextStyle,
+              Expanded(
+                child: Text(
+                  middleText,
+                  style: kRoundedButtonTextStyle,
+                ),
               ),
+              Expanded(
+                child: IconButton(
+                  icon: Icon(buttonIcon2),
+                  onPressed: onIconPress2,
+                ),
+              )
             ],
           ),
         ),

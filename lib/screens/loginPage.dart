@@ -30,14 +30,14 @@ class _LoginPageState extends State<LoginPage> {
               RoundedButton(
                 onPressed: null,
                 color: Colors.blue,
-                title: 'Google',
-                buttonIcon: Icons.check_circle,
+                middleText: 'Google',
+                buttonIcon1: Icons.check_circle,
               ),
               RoundedButton(
                 onPressed: null,
                 color: Colors.green,
-                title: 'Phone',
-                buttonIcon: Icons.phone,
+                middleText: 'Phone',
+                buttonIcon1: Icons.phone,
               ),
             ],
           ),
