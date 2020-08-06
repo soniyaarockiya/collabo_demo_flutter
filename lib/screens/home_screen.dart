@@ -1,4 +1,4 @@
-import 'package:collabo_demo_flutter/data/food_item_pojo.dart';
+import 'package:collabo_demo_flutter/data/food_item_podo.dart';
 import 'package:flutter/material.dart';
 import 'package:collabo_demo_flutter/sub_widgets/drawer_menu.dart';
 import 'package:collabo_demo_flutter/sub_widgets/list_view_builder.dart';
@@ -18,36 +18,17 @@ class _HomePageState extends State<HomePage> {
     Tab(text: 'From the Hen House'),
   ];
 
-  List<FoodItem> foodItemListInData = [
-    FoodItem(
-      dishName: 'Dsih name......',
-      dishPrice: '50unr',
-      dishCalories: '50000',
-      dishDescription: 'soniyaajjajaj',
-      dishImageUrl: 'bbjbjjjjjnj',
-    ),
-    FoodItem(
-      dishName: 'Dsih name.222.....',
-      dishPrice: '50unr',
-      dishCalories: '50000',
-      dishDescription: 'soniy3ye83uei30eaajjajaj',
-      dishImageUrl: 'bbjbjjjji3e3ue0ejnj',
-    ),
-    FoodItem(
-      dishName: 'Dsih name...eeeee...',
-      dishPrice: '50unfmeker',
-      dishCalories: '50000ekekjdek',
-      dishDescription: 'soniyaajjajmdnendkemdmedleaj',
-      dishImageUrl: 'bbjbjjjjjnj',
-    ),
-  ];
+  List<FoodItem> foodItemListInData = [];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    getFoodData();
+  }
+
+  void getFoodData() async {
     ApiService apiService = new ApiService();
-    apiService.getFoodData();
+    await apiService.getFoodData();
   }
 
   @override

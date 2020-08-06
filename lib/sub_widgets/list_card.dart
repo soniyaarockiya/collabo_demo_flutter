@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:collabo_demo_flutter/sub_widgets/roundButtons.dart';
-import 'package:collabo_demo_flutter/data/food_item_pojo.dart';
+import 'package:collabo_demo_flutter/data/food_item_podo.dart';
 
 class ListCard extends StatefulWidget {
   final FoodItem foodItem;
